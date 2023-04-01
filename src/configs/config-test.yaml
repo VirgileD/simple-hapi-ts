@@ -1,0 +1,18 @@
+youpi:
+  itworks: 'totally'
+db:
+  host: '127.0.0.1'
+  port: 5433
+  database: 'agreenpay'
+  user: 'yugabyte'
+  password:  'yugabyte'
+  # boolean ssl - use SSL (it also can be an ISSLConfig-like object)
+  # boolean binary - binary result mode
+  # string client_encoding
+  # string application_name
+  # string fallback_application_name
+  # number idleTimeoutMillis - lifespan for unused connections
+  # number max - maximum size of the connection pool
+  # number query_timeout - query execution timeout
+  # boolean keepAlive - keep TCP alive
+  # boolean allowExitOnIdle - let process exit when pool is idle

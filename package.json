@@ -1,0 +1,34 @@
+{
+  "name": "hapi-typescript",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev:tsc": "tsc --esModuleInterop --target esnext --moduleResolution node --module esnext --rootDir ./src --outDir dist --watch src/main.ts src/routes/*",
+    "dev:serve": "cd dist && find -type f  | grep '[(js)|(yaml)]$' | entr -r node ./main.js",
+    "dev:config": "nodemon -w ./src/configs -x 'cp -r ./src/configs ./dist/' -e '.yaml'",
+    "dev": "run-p dev:*",
+    "test:tsc": "tsc --esModuleInterop --target esnext --moduleResolution node --module esnext --rootDir ./src --outDir dist --watch src/main.ts src/routes/* src/test/*",
+    "test:run": "cd dist && find ./test -type f  | grep '[(js)|(yaml)]$' | entr -r mocha test/*",
+    "test:config": "nodemon -w ./src/configs -x 'cp -r ./src/configs ./dist/' -e '.yaml'",
+    "test": "run-p test:*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.0",
+    "glob": "^9.3.2",
+    "pg-promise": "^11.4.3",
+    "rollup": "^3.20.2",
+    "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "@types/chai": "^4.2.15",
+    "@types/hapi__hapi": "^20.0.5",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.14.33",
+    "chai": "^4.3.3",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.2.3"
+  }
+}
